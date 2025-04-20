@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { CiBookmarkPlus } from "react-icons/ci";
 import { CiBookmarkCheck } from "react-icons/ci";
 
-const Blog = ({ blog }) => {
+const Blog = ({ blog, handleAddToBookmarks }) => {
+
+    const [isBookmarked, setIsBookmarked] = useState(false)
+
     return (
         <div>
             <div className="card bg-base-100 shadow-sm">
@@ -13,8 +16,8 @@ const Blog = ({ blog }) => {
                 </figure>
                 <div className="card-body space-y-2">
                     <div className='flex justify-between'>
-                    <h2 className="card-title line-clamp-2 font-bold">{blog.title}</h2>
-                    <button className='hover:cursor-pointer'><CiBookmarkPlus size={28}></CiBookmarkPlus></button>
+                        <h2 className="card-title line-clamp-2 font-bold">{blog.title}</h2>
+                        <button onClick={()=>{handleAddToBookmarks(blog),setIsBookmarked(true)}} className='hover:cursor-pointer'>{isBookmarked?<CiBookmarkCheck size={28}></CiBookmarkCheck> :<CiBookmarkPlus size={28}></CiBookmarkPlus>}</button>
                     </div>
 
                     <div className='flex items-center gap-5'>
