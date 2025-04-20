@@ -1,8 +1,18 @@
+import Blogs from "./components/Blogs/Blogs"
+import Bookmarks from "./components/Bookmarks/Bookmarks"
+import Navbar from "./components/Navbar/Navbar"
+
 function App() {
 
   return (
     <div>
-      <h1>hello</h1>
+      <div>
+        <Navbar></Navbar>
+      </div>
+      <div className="flex">
+        <div className="w-[70%]"><Blogs></Blogs></div>
+        <div className="w-[30%]"><Bookmarks></Bookmarks></div>
+      </div>
     </div>
   )
 }
