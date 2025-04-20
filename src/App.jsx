@@ -7,8 +7,10 @@ function App() {
 
   const [bookmarks, setBookmarks] = useState([])
 
-  const handleAddToBookmarks = (blog)=>{
-    setBookmarks([...bookmarks, blog])
+  const handleAddToBookmarks = (blog) => {
+    if (!(bookmarks.find(oldBookmark => oldBookmark.id == blog.id))) [
+      setBookmarks([...bookmarks, blog])
+    ]
   }
 
   return (
