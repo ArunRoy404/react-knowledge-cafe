@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { CiBookmarkPlus } from "react-icons/ci";
 import { CiBookmarkCheck } from "react-icons/ci";
 
-const Blog = ({ blog, handleAddToBookmarks }) => {
+const Blog = ({ blog, handleAddToBookmarks, handleReadingTime}) => {
 
     const [isBookmarked, setIsBookmarked] = useState(false)
 
@@ -31,7 +31,7 @@ const Blog = ({ blog, handleAddToBookmarks }) => {
                     </div>
 
                     <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Mark as read</button>
+                        <button onClick={()=>handleReadingTime(blog)} className="btn btn-primary">Mark as read</button>
                     </div>
                 </div>
             </div>
